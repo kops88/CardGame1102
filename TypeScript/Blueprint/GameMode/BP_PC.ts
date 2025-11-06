@@ -1,7 +1,7 @@
 import UE from 'ue';
 import { BlueprintPath } from '../Path';
 import { blueprint } from 'puerts';
-import "Blueprint/BPW/Page/BPW_DuelPage";
+
 
 /**
  * ts mixin 到蓝图类
@@ -26,7 +26,7 @@ export class PlayerController {
 
 
 blueprint.mixin(jsclass_PC, PlayerController);
-
+console.log("Mixed in BP_PC_C with PlayerController");
 
 
 

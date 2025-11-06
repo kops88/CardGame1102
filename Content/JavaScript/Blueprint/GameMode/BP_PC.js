@@ -7,7 +7,6 @@ exports.PlayerController = void 0;
 const ue_1 = __importDefault(require("ue"));
 const Path_1 = require("../Path");
 const puerts_1 = require("puerts");
-require("Blueprint/BPW/Page/BPW_DuelPage");
 /**
  * ts mixin 到蓝图类
  * 1. 加载蓝图类的uclass
@@ -27,4 +26,5 @@ class PlayerController {
 }
 exports.PlayerController = PlayerController;
 puerts_1.blueprint.mixin(jsclass_PC, PlayerController);
+console.log("Mixed in BP_PC_C with PlayerController");
 //# sourceMappingURL=BP_PC.js.map
