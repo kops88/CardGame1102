@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("Blueprint/GameMode/BP_PC");
 require("Blueprint/BPW/Page/BPW_DuelPage");
 require("Blueprint/BPW/CardInstance/BPW_CardInstance");
+require("Blueprint/BPW/CardInstance/BPW_DragWidget");
+require("Blueprint/BPW/CardInstance/BP_CardMovementComponent");
 // console.log("Hello World 7758");
 // console.log(UE.uclass);
 // console.log(UE.SoundClass)
