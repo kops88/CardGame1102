@@ -8,7 +8,7 @@ exports.SampleWidget = void 0;
  * @Author: kops88_cmp 3036435162@qq.com
  * @Date: 2025-11-07 10:10:18
  * @LastEditors: kops88_cmp 3036435162@qq.com
- * @LastEditTime: 2025-11-10 14:03:55
+ * @LastEditTime: 2025-11-10 17:41:13
  * @FilePath: \CardGame1102\TypeScript\Blueprint\BPW\CardInstance\BPW_DragWidget.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -16,7 +16,7 @@ const ue_1 = __importDefault(require("ue"));
 const puerts_1 = require("puerts");
 const Path_1 = require("../../Path");
 const EventSystem_1 = require("../../../SubSystem/EventSystem");
-const uclass = ue_1.default.Class.Load(Path_1.BlueprintPath.BPW_DragWidget);
+const uclass = ue_1.default.Class.Load(Path_1.BlueprintPath.BPW_SampleWidget);
 const jsclass = puerts_1.blueprint.tojs(uclass);
 class SampleWidget {
     aaa = "Hello";
@@ -37,7 +37,7 @@ class SampleWidget {
         this.BPprint();
     }
     RegisterEvent() {
-        console.log("[SampleWidget].DragWidget.RegisterEvent; Button = ", this.Button);
+        console.log("[SampleWidget].SampleWidget.RegisterEvent; Button = ", this.Button);
         this.Button.OnPressed.Add(() => {
             this.OnDragPressed.Broadcast(this);
         });
@@ -54,4 +54,4 @@ class SampleWidget {
 }
 exports.SampleWidget = SampleWidget;
 puerts_1.blueprint.mixin(jsclass, SampleWidget);
-//# sourceMappingURL=BPW_DragWidget.js.map
+//# sourceMappingURL=BPW_SampleWidget.js.map

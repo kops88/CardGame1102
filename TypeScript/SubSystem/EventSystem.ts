@@ -42,6 +42,9 @@ export class GameEventSystem {
 export class TsDelegate<T extends Function> {
     private callbacks: T[] = [];
 
+    /**
+     * @param cb 委托的回调函数
+     */
     Add(cb: T): void {
         this.callbacks.push(cb);
     }

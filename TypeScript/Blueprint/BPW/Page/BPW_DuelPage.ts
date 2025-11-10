@@ -1,15 +1,19 @@
+/*
+ * @Author: kops88_cmp 3036435162@qq.com
+ * @Date: 2025-11-06 09:49:49
+ * @LastEditors: kops88_cmp 3036435162@qq.com
+ * @LastEditTime: 2025-11-10 13:31:19
+ * @FilePath: \CardGame1102\TypeScript\Blueprint\BPW\Page\BPW_DuelPage.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import UE, { Class, TArray } from 'ue';
 import { blueprint } from 'puerts';
 import { BlueprintPath } from '../../Path';
 import "Blueprint/BPW/CardInstance/BPW_CardInstance";
 import { BP_CardMovementComponent } from "../CardInstance/BP_CardMovementComponent";
 
-
-
-
 const uclass = UE.Class.Load(BlueprintPath.BPW_DuelPage);
 const jsclass = blueprint.tojs(uclass);
-
 
 export interface DuelPage extends UE.Game.Blueprint.BPW.Page.BPW_DuelPage.BPW_DuelPage_C {}
 export class DuelPage {
@@ -19,8 +23,15 @@ export class DuelPage {
     Construct() {
         console.log("[BPW_DuelPage].Construct");
         const CompClass = UE.Class.Load(BlueprintPath.BP_CardMovementComponent);
-        this.mCardMovementComponent = UE.NewObject(CompClass, this.GetWorld()) as BP_CardMovementComponent;
-        // this.mCardMovementComponent = new BP_CardMovementComponent();
+
+        blueprint.load(UE.Game.Blueprint.BPW.Page.BP_CardMovementComponentt.BP_CardMovementComponentt_C);
+        this.mCardMovementComponent = UE.GameplayStatics.BeginDeferredActorSpawnFromClass(
+            this.GetWorld(),
+            CompClass,
+            UE.Transform.Identity
+        ) as unknown as BP_CardMovementComponent;
+        UE.GameplayStatics.FinishSpawningActor(this.mCardMovementComponent, UE.Transform.Identity);
+
         console.log("[BPW_DuelPage].Construct mCardMovementComponent:", this.mCardMovementComponent);
         this.RegisterEvents();
     }
@@ -32,13 +43,10 @@ export class DuelPage {
         // TestBtn1 点击后添加一个卡牌。
         this.TestBtn1.OnClicked.Add(() => {
             console.log("[BPW_DuelPage].TestBtn1 Clicked");
-            this.mCardMovementComponent?.AddCardSample();
+            this.mCardMovementComponent?.AddCard();
         });
     };
 }
-
-
-
 
 
 blueprint.mixin(jsclass, DuelPage);

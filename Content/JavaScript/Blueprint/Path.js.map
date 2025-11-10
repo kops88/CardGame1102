@@ -1,1 +1,1 @@
-{"version":3,"file":"Path.js","sourceRoot":"","sources":["../../../TypeScript/Blueprint/Path.ts"],"names":[],"mappings":";;;AAGa,QAAA,aAAa,GAAG;IACzB,KAAK,EAAE,wCAAwC;IAC/C,YAAY,EAAE,sDAAsD;IACpE,0FAA0F;IAE1F,eAAe;IACf,cAAc,EAAE,kEAAkE;IAClF,cAAc,EAAE,kEAAkE;IAElF,wBAAwB,EAAE,8EAA8E;CAC3G,CAAC"}
+{"version":3,"file":"Path.js","sourceRoot":"","sources":["../../../TypeScript/Blueprint/Path.ts"],"names":[],"mappings":";;;AAWa,QAAA,aAAa,GAAG;IACzB,KAAK,EAAE,wCAAwC;IAC/C,YAAY,EAAE,sDAAsD;IACpE,0FAA0F;IAE1F,eAAe;IACf,gBAAgB,EAAE,sEAAsE;IAExF,wBAAwB,EAAE,gFAAgF;CAC7G,CAAC"}

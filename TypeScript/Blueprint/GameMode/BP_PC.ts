@@ -14,10 +14,10 @@ const uclass_PC = UE.Class.Load(BlueprintPath.BP_PC);
 const jsclass_PC = blueprint.tojs(uclass_PC);
 export interface PlayerController extends UE.Game.Blueprint.GameMode.BP_PC.BP_PC_C {}
 export class PlayerController {
+    testactor: any = null;
     ReceiveBeginPlay() {
         console.log("BP_PC ReceiveBeginPlay");
         UE.WidgetBlueprintLibrary.Create(this, UE.Class.Load(BlueprintPath.BPW_DuelPage), this).AddToViewport();
-        // UE.WidgetBlueprintLibrary.Create(this, UE.Class.Load(BlueprintPath.BPW_DragWidget), this).AddToViewport();
         this.bShowMouseCursor = true;
     }
 }

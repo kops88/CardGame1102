@@ -1,3 +1,11 @@
+/*
+ * @Author: kops88_cmp 3036435162@qq.com
+ * @Date: 2025-11-06 09:49:49
+ * @LastEditors: kops88_cmp 3036435162@qq.com
+ * @LastEditTime: 2025-11-10 13:29:47
+ * @FilePath: \CardGame1102\TypeScript\Blueprint\Path.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import UE from "ue"
 
 
@@ -7,9 +15,8 @@ export const BlueprintPath = {
     //BP_CardInstance: "/Game/Blueprint/BPW/CardInstance/BPW_CardInstance.BPW_CardInstance_C",
 
     // CardInstance
-    BPW_SampleComp: "/Game/Blueprint/BPW/CardInstance/BPW_SampleComp.BPW_SampleComp_C",
-    BPW_DragWidget: "/Game/Blueprint/BPW/CardInstance/BPW_DragWidget.BPW_DragWidget_C",
+    BPW_SampleWidget: "/Game/Blueprint/BPW/CardInstance/BPW_SampleWidget.BPW_SampleWidget_C",
     
-    BP_CardMovementComponent: "/Game/Blueprint/BPW/Page/BP_CardMovementComponent.BP_CardMovementComponent_C",
+    BP_CardMovementComponent: "/Game/Blueprint/BPW/Page/BP_CardMovementComponentt.BP_CardMovementComponentt_C",
 };
 

@@ -17,10 +17,10 @@ const puerts_1 = require("puerts");
 const uclass_PC = ue_1.default.Class.Load(Path_1.BlueprintPath.BP_PC);
 const jsclass_PC = puerts_1.blueprint.tojs(uclass_PC);
 class PlayerController {
+    testactor = null;
     ReceiveBeginPlay() {
         console.log("BP_PC ReceiveBeginPlay");
         ue_1.default.WidgetBlueprintLibrary.Create(this, ue_1.default.Class.Load(Path_1.BlueprintPath.BPW_DuelPage), this).AddToViewport();
-        // UE.WidgetBlueprintLibrary.Create(this, UE.Class.Load(BlueprintPath.BPW_DragWidget), this).AddToViewport();
         this.bShowMouseCursor = true;
     }
 }

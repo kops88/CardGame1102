@@ -37,6 +37,9 @@ class GameEventSystem {
 exports.GameEventSystem = GameEventSystem;
 class TsDelegate {
     callbacks = [];
+    /**
+     * @param cb 委托的回调函数
+     */
     Add(cb) {
         this.callbacks.push(cb);
     }
