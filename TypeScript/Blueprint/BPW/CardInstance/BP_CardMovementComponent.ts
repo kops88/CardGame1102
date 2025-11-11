@@ -1,3 +1,4 @@
+console.log("[CardMovementComponent].Start")
 import UE from 'ue';
 import { blueprint } from 'puerts';
 import { BlueprintPath } from '../../Path';
@@ -41,6 +42,7 @@ export class BP_CardMovementComponent {
         this.SampleList = [];
         this.DragOffset = new UE.Vector2D(0, 0);
         this.bStartInterp = false;
+        this.TargetPos.Add(new UE.Vector2D(0, 0));
         console.log("[CardMovementComponent].InitData, bStartInterp = ", this.bStartInterp);
     }
 
@@ -94,6 +96,8 @@ export class BP_CardMovementComponent {
     private JudgeFinishInterp(): boolean {
         let translation = new UE.Vector2D(0, 0);
         let target = new UE.Vector2D(0, 0);
+        if(this.SampleList.length !== this.TargetPos.Num())
+            return false;
         for(let idx = 0; idx < this.SampleList.length; idx++){
             translation = this.SampleList[idx].RenderTransform.Translation;
             target = this.TargetPos.Get(idx);
@@ -289,3 +293,4 @@ export class BP_CardMovementComponent {
 }
 
 blueprint.mixin(jsComponent, BP_CardMovementComponent);
+console.log("[CardMovementComponent].Finish")

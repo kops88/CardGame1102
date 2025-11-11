@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BP_CardMovementComponent = void 0;
+console.log("[CardMovementComponent].Start");
 const ue_1 = __importDefault(require("ue"));
 const puerts_1 = require("puerts");
 const Path_1 = require("../../Path");
@@ -36,6 +37,7 @@ class BP_CardMovementComponent {
         this.SampleList = [];
         this.DragOffset = new ue_1.default.Vector2D(0, 0);
         this.bStartInterp = false;
+        this.TargetPos.Add(new ue_1.default.Vector2D(0, 0));
         console.log("[CardMovementComponent].InitData, bStartInterp = ", this.bStartInterp);
     }
     /**
@@ -83,6 +85,8 @@ class BP_CardMovementComponent {
     JudgeFinishInterp() {
         let translation = new ue_1.default.Vector2D(0, 0);
         let target = new ue_1.default.Vector2D(0, 0);
+        if (this.SampleList.length !== this.TargetPos.Num())
+            return false;
         for (let idx = 0; idx < this.SampleList.length; idx++) {
             translation = this.SampleList[idx].RenderTransform.Translation;
             target = this.TargetPos.Get(idx);
@@ -243,4 +247,5 @@ class BP_CardMovementComponent {
 }
 exports.BP_CardMovementComponent = BP_CardMovementComponent;
 puerts_1.blueprint.mixin(jsComponent, BP_CardMovementComponent);
+console.log("[CardMovementComponent].Finish");
 //# sourceMappingURL=BP_CardMovementComponent.js.map

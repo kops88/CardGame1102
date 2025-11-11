@@ -10,6 +10,7 @@ import { blueprint } from 'puerts';
  * 3. 定义ts类，方法和属性和蓝图类一致
  * 4. 使用blueprint.mixin混入
  */
+console.log("[BP_PC].StartMixin")
 const uclass_PC = UE.Class.Load(BlueprintPath.BP_PC);
 const jsclass_PC = blueprint.tojs(uclass_PC);
 export interface PlayerController extends UE.Game.Blueprint.GameMode.BP_PC.BP_PC_C {}
@@ -26,7 +27,7 @@ export class PlayerController {
 
 
 blueprint.mixin(jsclass_PC, PlayerController);
-console.log("Mixed in BP_PC_C with PlayerController");
+console.log("[BP_PC].Mixed in Finished");
 
 
 

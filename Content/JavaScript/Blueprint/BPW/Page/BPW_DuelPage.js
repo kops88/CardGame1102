@@ -12,6 +12,7 @@ exports.DuelPage = void 0;
  * @FilePath: \CardGame1102\TypeScript\Blueprint\BPW\Page\BPW_DuelPage.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+console.log("[BPW_DuelPage].Start");
 const ue_1 = __importDefault(require("ue"));
 const puerts_1 = require("puerts");
 const Path_1 = require("../../Path");
@@ -41,4 +42,5 @@ class DuelPage {
 }
 exports.DuelPage = DuelPage;
 puerts_1.blueprint.mixin(jsclass, DuelPage);
+console.log("[BPW_DuelPage].Finish");
 //# sourceMappingURL=BPW_DuelPage.js.map

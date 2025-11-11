@@ -14,6 +14,7 @@ const puerts_1 = require("puerts");
  * 3. 定义ts类，方法和属性和蓝图类一致
  * 4. 使用blueprint.mixin混入
  */
+console.log("[BP_PC].StartMixin");
 const uclass_PC = ue_1.default.Class.Load(Path_1.BlueprintPath.BP_PC);
 const jsclass_PC = puerts_1.blueprint.tojs(uclass_PC);
 class PlayerController {
@@ -26,5 +27,5 @@ class PlayerController {
 }
 exports.PlayerController = PlayerController;
 puerts_1.blueprint.mixin(jsclass_PC, PlayerController);
-console.log("Mixed in BP_PC_C with PlayerController");
+console.log("[BP_PC].Mixed in Finished");
 //# sourceMappingURL=BP_PC.js.map

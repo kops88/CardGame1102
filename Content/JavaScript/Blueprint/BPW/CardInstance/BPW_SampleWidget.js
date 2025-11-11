@@ -8,16 +8,19 @@ exports.SampleWidget = void 0;
  * @Author: kops88_cmp 3036435162@qq.com
  * @Date: 2025-11-07 10:10:18
  * @LastEditors: kops88_cmp 3036435162@qq.com
- * @LastEditTime: 2025-11-10 17:41:13
+ * @LastEditTime: 2025-11-11 10:34:29
  * @FilePath: \CardGame1102\TypeScript\Blueprint\BPW\CardInstance\BPW_DragWidget.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: 卡片的img、拖拽等功能，不负责数据和战斗逻辑。
  */
+console.log("[BPW_SampleWidget].Start");
 const ue_1 = __importDefault(require("ue"));
 const puerts_1 = require("puerts");
-const Path_1 = require("../../Path");
 const EventSystem_1 = require("../../../SubSystem/EventSystem");
-const uclass = ue_1.default.Class.Load(Path_1.BlueprintPath.BPW_SampleWidget);
+console.log("[BPW_SampleWidget].uclass.loadStart");
+const uclass = ue_1.default.Class.Load("/Game/Blueprint/BPW/CardInstance/BPW_SampleWidget.BPW_SampleWidget_C");
+console.log("[BPW_SampleWidget].uclass.loadFinish");
 const jsclass = puerts_1.blueprint.tojs(uclass);
+console.log("[BPW_SampleWidget].jsclass.tojsFinish");
 class SampleWidget {
     aaa = "Hello";
     OnDragPressed = new EventSystem_1.TsDelegate();
@@ -34,7 +37,6 @@ class SampleWidget {
         console.log("[SampleWidget].SampleWidget.Construct  OnDragPressed =", this.OnDragPressed);
         console.log("[SampleWidget].SampleWidget.Construct  OnDragReleased =", this.OnDragReleased);
         this.RegisterEvent();
-        this.BPprint();
     }
     RegisterEvent() {
         console.log("[SampleWidget].SampleWidget.RegisterEvent; Button = ", this.Button);
@@ -54,4 +56,5 @@ class SampleWidget {
 }
 exports.SampleWidget = SampleWidget;
 puerts_1.blueprint.mixin(jsclass, SampleWidget);
+console.log("[BPW_SampleWidget].Finish");
 //# sourceMappingURL=BPW_SampleWidget.js.map
